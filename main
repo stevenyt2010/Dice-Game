@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""
+Simple Dice Rolling Game.
+
+How to play:
+- You and the computer both roll a six-sided dice.
+- The higher roll wins the round.
+- Scores are tracked across rounds until you decide to quit.
+"""
+
+import random
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def main():
+    print("Welcome to the Dice Rolling Game! Type Ctrl+C to quit.\n")
+    user_score = 0
+    computer_score = 0
+
+    while True:
+        input("Press Enter to roll the dice...")
+        user_roll = roll_dice()
+        computer_roll = roll_dice()
+        print(f"You rolled: {user_roll}")
+        print(f"Computer rolled: {computer_roll}")
+
+        if user_roll > computer_roll:
+            print("You win this round!\n")
+            user_score += 1
+        elif computer_roll > user_roll:
+            print("Computer wins this round!\n")
+            computer_score += 1
+        else:
+            print("It's a draw!\n")
+
+        print(f"Score -> You: {user_score} | Computer: {computer_score}\n")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (KeyboardInterrupt, EOFError):
+        print("\nGoodbye!")
