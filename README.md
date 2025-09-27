@@ -1,0 +1,1 @@
+You and the computer each roll a six-sided dice. The higher number wins the round, and scores are tracked as long as you play. If both rolls are equal, it’s a draw. You can keep rolling until you decide to stop.
